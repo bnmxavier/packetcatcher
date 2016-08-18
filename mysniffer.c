@@ -44,8 +44,7 @@ int main(int argc,char **argv)
     /* ask pcap for the network address and mask of the device */
     pcap_lookupnet(dev,&netp,&maskp,errbuf);
 
-    /* open device for reading. NOTE: defaulting to
-     * promiscuous mode*/
+    /* open device for reading.*/
     descr = pcap_open_live(dev,BUFSIZ,1,-1,errbuf);
     if(descr == NULL)
     { printf("pcap_open_live(): %s\n",errbuf); exit(1); }
