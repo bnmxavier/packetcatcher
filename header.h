@@ -27,18 +27,11 @@
 #include <ctype.h>
 
 
-/* tcpdump header (ether.h) defines ETHER_HDRLEN) */
-
 
 // Structs
 /*
- * Structure of an internet header, naked of options.
+ * Structure of an internet header
  *
- *
- *
- * We declare ip_len and ip_off to be short, rather than u_short
- * pragmatically since otherwise unsigned comparisons can result
- * against negative integers quite easily, and fail in subtle ways.
  */
 
  struct my_ip
@@ -73,12 +66,6 @@ struct sniff_udp
 #define SIZE_ETHERNET 14                /*length of ethernet header*/
 
 //Function definitions
-void ProcessPacket(const u_char* , int);
-void print_ip_header(const u_char* , int);
-void print_tcp_packet(const u_char* , int);
-void print_udp_packet(const u_char * , int);
-void print_icmp_packet(const u_char* , int);
-void PrintData (const u_char* , int);
 u_int16_t handle_ethernet
         (u_char *args,const struct pcap_pkthdr* pkthdr,const u_char*
         packet);

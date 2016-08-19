@@ -1,0 +1,12 @@
+README:
+
+To run the project you may need to download a library, here is the code to do that
+sudo apt-get install libsqlite3-0 libpcap0.8
+To get an executable simply type make at the cmd line once you are in the correct directory
+then the program can be run with ./psniff [number of packets to capture in int form(zero for infinite)] "[filter args]"
+more info on filters here http://www.tcpdump.org/manpages/pcap-filter.7.html
+This program must be run with root privileges because it opens a raw socket for packet capture.
+Here is an example command and the one I ran the program with most often
+sudo ./psniff 0 "ip proto \udp"    The zero tells the program to listen indefinitely,
+the ip proto \udp tells the socket to only accept packets with UDP protocols.
+I do not know if this will run on mac without issue as I built it on linux, most issues will probably be the result of lack of permissions

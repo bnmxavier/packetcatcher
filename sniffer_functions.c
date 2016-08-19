@@ -2,7 +2,6 @@
 
 //Packet handleing functions
 /* looking at ethernet headers */
-int tcp=0,udp=0,icmp=0,others=0,igmp=0,total=0,i,j;
 
 
 void print_hex_ascii_line(const u_char *payload, int len, int offset) // Function to convert hex to ASCII
